@@ -1,0 +1,50 @@
+digraph java_collection_hierachy {
+  rankdir=RL;
+
+  collection [label="Collection", shape=box, style=dashed];
+  list [label="List", shape=box, style=dashed];
+  queue [label="Queue", shape=box, style=dashed];
+  deque [label="Deque", shape=box, style=dashed];
+  set [label="Set", shape=box, style=dashed];
+  map [label="Map", shape=box, style=dashed];
+
+  { list; queue; set; map; } -> collection;
+
+  stack [label="Stack", shape=ellipse];
+  array_list [label="ArrayList", shape=ellipse];
+  linked_list [label="LinkedList", shape=ellipse];
+  { array_list; linked_list; stack; } -> list;
+
+  blocking_queue [label="BlockingQueue", shape=box, style=dashed];
+  array_blocking_queue [label="ArrayBlockingQueue", shape=ellipse];
+  linked_blocking_queue [label="LinkedBlockingQueue", shape=ellipse];
+  priority_queue [label="PriorityQueue", shape=ellipse];
+  priority_blocking_queue [label="PriorityBlockingQueue", shape=ellipse];
+  priority_queue -> queue;
+  { array_blocking_queue; linked_blocking_queue; priority_blocking_queue; } -> blocking_queue -> queue;
+
+  blocking_deque [label="BlockingDeque", shape=box, style=dashed];
+  linked_blocking_deque [label="LinkedBlockingDeque", shape=ellipse];
+  array_deque [label="ArrayDeque", shape=ellipse];
+  concurrent_linked_deque [label="ConcurrentLinkedDeque", shape=ellipse];
+  linked_blocking_deque -> blocking_deque -> deque -> queue;
+  blocking_deque -> blocking_queue;
+  { linked_list; array_deque; concurrent_linked_deque; } -> deque;
+  
+  sorted_set [label="SortedSet", shape=box, style=dashed];
+  hash_set [label="HashSet", shape=ellipse];
+  linked_hash_set [label="LinkedHashSet", shape=ellipse];
+  tree_set [label="TreeSet", shape=ellipse];
+  linked_hash_set -> hash_set -> set;
+  tree_set -> sorted_set -> set;
+
+  hash_map [label="HashMap", shape=ellipse];
+  linked_hash_map [label="LinkedHashMap", shape=ellipse];
+  sorted_map [label="SortedMap", shape=box, style=dashed];
+  tree_map [label="TreeMap", shape=ellipse];
+  concurrent_map [label="ConcurrentMap", shape=box, style=dashed];
+  concurrent_hash_map [label="ConcurrentHashMap", shape=ellipse];
+  { hash_map; linked_hash_map;} -> map;
+  tree_map -> sorted_map -> map;
+  concurrent_hash_map -> concurrent_map -> map;
+}
