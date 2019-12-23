@@ -1,7 +1,5 @@
 package linkedlist;
 
-import lombok.Data;
-
 /**
  * Liked
  */
