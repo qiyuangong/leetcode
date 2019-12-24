@@ -42,10 +42,25 @@ class Solution:
         return True
 
     def hasCycle1(self, head: ListNode) -> bool:
-        fast, slow = head,head
+        fast, slow = head, head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
             if slow is fast:
                 return True
         return False
+
+    def swapPairs(self, head: ListNode) -> ListNode:
+        '''
+        给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
+        你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+        :param head:
+        :return:
+        '''
+        p = head
+        while p and p.next:
+            temp = p.val
+            p.val = p.next.val
+            p.next.val = temp
+            p = p.next.next
+        return head

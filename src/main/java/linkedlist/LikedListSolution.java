@@ -17,7 +17,7 @@ public class LikedListSolution {
      * @Date 2019-12-24 18:00
      * @Param
      */
-    public ListNode reverseList(ListNode head) {
+    public static  ListNode reverseList(ListNode head) {
         ListNode cur = head;
         ListNode prev = null;
         while (cur.next != null) {
@@ -68,7 +68,7 @@ public class LikedListSolution {
 
     public boolean hasCycle3(ListNode head) {
         //2-使用set装节点判断是否存在set中
-        Set<ListNode> set = new HashSet<>();
+        Set<ListNode> set = new HashSet<ListNode>();
         while (head != null) {
             if (set.contains(head)) {
                 return true;
@@ -103,14 +103,12 @@ public class LikedListSolution {
      */
     public static ListNode swapPairs(ListNode head) {
         //需要成双成对
-
-        ListNode one = head;
-        ListNode two = head.next;
-        while (head != null) {
-            ListNode temp = two;
-            two = one;
-            one.next = temp;
-            head = head.next;
+        ListNode p = head;
+        while (p != null && p.next != null) {
+            int temp = p.val;
+            p.val = p.next.val;
+            p.next.val = temp;
+            p = p.next.next;
         }
         return head;
     }
