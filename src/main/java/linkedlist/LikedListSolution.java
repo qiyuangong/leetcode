@@ -1,18 +1,19 @@
 package linkedlist;
 
+import model.ListNode;
+
 /**
  * Liked
  */
-public class LikedList {
+public class LikedListSolution {
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
+    /**
+     * @Author s·D·bs
+     * @Description //reverse List
+     * @Date 2019-12-24 18:00
+     * @Param
+     * @return
+     */
     public ListNode reverseList(ListNode head) {
         ListNode cur = head;
         ListNode prev = null;
