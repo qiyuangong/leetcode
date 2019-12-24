@@ -32,7 +32,7 @@ public class LikedListSolution {
     /**
      * @return
      * @Author s·D·bs
-     * @Description //快慢指针
+     * @Description
      * @Date 2019年12月24日23:04:19
      * @Param
      */
@@ -49,13 +49,6 @@ public class LikedListSolution {
         return true;
     }
 
-    /**
-     * @return
-     * @Author s·D·bs
-     * @Description //ListNode 中是否含有环
-     * @Date 2019年12月24日22:45:24
-     * @Param
-     */
     public boolean hasCycle1(ListNode head) {
         if (head == null || head.next == null) {
             return false;
@@ -99,5 +92,26 @@ public class LikedListSolution {
             }
         }
         return false;
+    }
+
+    /**
+     * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
+     * 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode swapPairs(ListNode head) {
+        //需要成双成对
+
+        ListNode one = head;
+        ListNode two = head.next;
+        while (head != null) {
+            ListNode temp = two;
+            two = one;
+            one.next = temp;
+            head = head.next;
+        }
+        return head;
     }
 }
