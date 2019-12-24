@@ -23,3 +23,23 @@ class Solution:
         while cur:
             cur.next, prev, cur = prev, cur, cur.next
         return prev
+
+
+if __name__ == '__main__':
+    solution = Solution()
+
+    listNode1 = ListNode(1)
+    listNode2 = ListNode(2)
+    listNode3 = ListNode(3)
+    listNode4 = ListNode(4)
+    listNode5 = ListNode(5)
+
+    listNode1.next = listNode2
+    listNode2.next = listNode3
+    listNode3.next = listNode4
+    listNode4.next = listNode5
+    listNode5.next = None
+
+    node = solution.reverseList(listNode1)
+    nodelist = []
+
