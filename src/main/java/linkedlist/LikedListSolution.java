@@ -20,7 +20,7 @@ public class LikedListSolution {
     public static  ListNode reverseList(ListNode head) {
         ListNode cur = head;
         ListNode prev = null;
-        while (cur.next != null) {
+        while (cur != null) {
             ListNode temp = cur.next;
             cur.next = prev;
             prev = cur;
