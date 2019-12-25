@@ -1,51 +1,28 @@
 package hhl.lombok;
 
 import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import model.ListNode;
 import model.Person;
 import org.junit.Before;
 import org.junit.Test;
 
+import static hhl.util.Utils.doMakeListNode;
+import static linkedlist.LikedListSolution.reverseList;
 import static linkedlist.LikedListSolution.swapPairs;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
+@Slf4j
 public class TestPersonAndFastJson {
     private static ListNode listNode;
     private static ListNode listNodeOld;
 
     @Before
     public void initListNode() {
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(4);
-        ListNode listNode5 = new ListNode(5);
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode5;
-        listNode5.next = null;
-        listNode = listNode1;
-        System.out.println("listNode = " + listNode);
+        listNode = doMakeListNode(5);
+        listNodeOld = reverseList(doMakeListNode(5));
     }
 
-    @Before
-    public void initListNode1() {
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(4);
-
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = null;
-        listNodeOld = listNode1;
-        System.out.println("listNode = " + listNodeOld);
-
-
-    }
 
     @Test
     public void test_pf() {
@@ -63,8 +40,11 @@ public class TestPersonAndFastJson {
     public void test_SwapPairs() {
 
         ListNode listNode1 = swapPairs(listNode);
-        System.out.println("new listNode1 = " + listNode1);
         ListNode listNode2 = swapPairs(listNodeOld);
-        System.out.println("new listNode2 = " + listNode2);
+        assertEquals(listNode1.toString(),"ListNode(val=2, next=ListNode(val=1, next=ListNode(val=4, next=ListNode(val=3, next=ListNode(val=5, next=null)))))");
+        assertEquals(listNode2.toString(),"ListNode(val=4, next=ListNode(val=5, next=ListNode(val=2, next=ListNode(val=3, next=ListNode(val=1, next=null)))))");
+        log.info("new listNode1:{}",listNode1);
+        log.info(" new listNode2:{}",listNode2);
+
     }
 }
