@@ -24,6 +24,47 @@ class Solution:
             cur.next, prev, cur = prev, cur, cur.next
         return prev
 
+    def hasCycle(self, head: ListNode) -> bool:
+        '''
+        此种最优
+        :param head:
+        :return:
+        '''
+        if head is None or head.next is None:
+            return False
+        slow = head
+        fast = head.next
+        while slow != fast:
+            if fast is None or fast.next is None:
+                return False
+            slow = slow.next
+            fast = fast.next.next
+        return True
+
+    def hasCycle1(self, head: ListNode) -> bool:
+        fast, slow = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow is fast:
+                return True
+        return False
+
+    def swapPairs(self, head: ListNode) -> ListNode:
+        '''
+        给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
+        你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+        :param head:
+        :return:
+        '''
+        p = head
+        while p and p.next:
+            temp = p.val
+            p.val = p.next.val
+            p.next.val = temp
+            p = p.next.next
+        return head
+
 
 if __name__ == '__main__':
     solution = Solution()
@@ -41,5 +82,4 @@ if __name__ == '__main__':
     listNode5.next = None
 
     node = solution.reverseList(listNode1)
-    nodelist = []
 
