@@ -116,4 +116,33 @@ public class LikedListSolution {
         }
         return head;
     }
+
+    /**
+     * 给定一个链表，返回循环开始的节点。如果没有循环，则返回null。
+     * 为了表示给定链表中的循环，我们使用一个整数pos来表示尾部连接到的链表中的位置（0索引）。如果pos为-1，则链接列表中没有循环。
+     *
+     * @param head
+     * @return
+     */
+    public ListNode detectCycle(ListNode head) {
+        //4 使用快慢指针和前一个指针
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        if (fast == null || fast.next == null) {
+            return null;
+        }
+        slow = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
 }
