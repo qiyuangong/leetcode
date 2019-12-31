@@ -17,13 +17,17 @@ public class LikedListSolution {
      * @Date 2019-12-24 18:00
      * @Param
      */
-    public static  ListNode reverseList(ListNode head) {
-        ListNode cur = head;
-        ListNode prev = null;
+    public static ListNode reverseList(ListNode head) {
+        ListNode cur = head;//当前节点指针
+        ListNode prev = null;//前一个节点指针
+        //每次循环都把当前节点指向前一个节点，把前节点和当前节点后移
         while (cur != null) {
-            ListNode temp = cur.next;
+            ListNode temp = cur.next;//用于后移
+            //当前节点指向前一个节点并且后移
             cur.next = prev;
+            //前节点后移
             prev = cur;
+            //进行下一次循环
             cur = temp;
         }
         return prev;
