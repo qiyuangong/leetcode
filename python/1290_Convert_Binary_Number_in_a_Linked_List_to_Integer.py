@@ -33,14 +33,15 @@ Each node's value is either 0 or 1.
 
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
-        ll=[]
-        ll.append(head.val)
+        binary_numbers_list=[]
+        binary_numbers_list.append(head.val)
         while(head.next!=None):
             head=head.next
-            ll.append(head.val)
-        ans=0
-        po=0
-        for i in range(len(ll)-1,-1,-1):
-            ans+=((2**po)*ll[i])
-            po+=1
-        return ans
+            binary_numbers_list.append(head.val)
+        answer=0
+        power=0
+        for digit in range(len(binary_numbers_list)-1,-1,-1):
+            if(binary_numbers_list[digit]>0):
+                answer+=((2**power)*binary_numbers_list[digit])
+            power+=1
+        return answer
