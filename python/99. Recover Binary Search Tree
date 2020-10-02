@@ -1,0 +1,25 @@
+def __init__(self):
+        self.pre = None
+        self.first = None
+        self.second = None
+        
+        
+def recoverTree(self, root: TreeNode) -> None:
+        """
+        Do not return anything, modify root in-place instead.
+        """
+        self.dfs(root)
+        temp = self.first.val
+        self.first.val = self.second.val
+        self.second.val = temp
+             
+def dfs(self, root):
+        if not root:
+            return
+        self.dfs(root.left)
+        if self.pre and root.val < self.pre.val:
+            self.second = root
+            if not self.first:
+                self.first = self.pre
+        self.pre = root
+        self.dfs(root.right)
