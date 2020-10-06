@@ -11,12 +11,10 @@ class Solution(object):
             return False
         ls = len(str(x))
         tmp = x
-        print((int(ls/2)))
         for i in range(int(ls/2)):
             right = int(tmp % 10)
             left = tmp / (10 ** (ls - 2 * i - 1))
             left = int(left % 10)
-            print (left, right)
             if left != right:
                 return False
             tmp = tmp // 10
