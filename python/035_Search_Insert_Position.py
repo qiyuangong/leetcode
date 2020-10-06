@@ -32,7 +32,7 @@ class Solution:
                 r = mid
         if nums[l] < target:
             return l + 1
-        return l
+        return l 
 
     
     
