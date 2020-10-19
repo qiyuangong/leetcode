@@ -36,3 +36,10 @@ class Solution(object):
                     dp[i] = min(pre + 1, dp[i] + 1, dp[i - 1] + 1)
                 pre = temp
         return dp[ls_1]
+    
+
+    if __name__ == '__main__':
+    # begin
+    s = Solution()
+    print (s.minDistance("horse","ros"))        
+    print (s.minDistance("intention","execution"))        
