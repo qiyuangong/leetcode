@@ -24,7 +24,7 @@ class Solution(object):
 
     def minDistance(self, word1, word2):
         ls_1, ls_2 = len(word1), len(word2)
-        dp = range(ls_1 + 1)
+        dp = list(range(ls_1 + 1))
         for j in range(1, ls_2 + 1):
             pre = dp[0]
             dp[0] = j
