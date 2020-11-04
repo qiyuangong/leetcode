@@ -53,7 +53,7 @@ class Solution(object):
             if (lsb + pos) >= 0:
                 curr += int(b[pos])
             res = str(curr % 2) + res
-            curr /= 2
+            curr //= 2
             pos -= 1
         if curr == 1:
             res = '1' + res
