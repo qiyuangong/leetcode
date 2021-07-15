@@ -6,19 +6,27 @@
 #         """
 
 class Solution(object):
-    def isPalindrome(self, x):
-        if x < 0:
-            return False
-        ls = len(str(x))
-        tmp = x
-        for i in range(int(ls/2)):
-            right = int(tmp % 10)
-            left = tmp / (10 ** (ls - 2 * i - 1))
-            left = int(left % 10)
-            if left != right:
-                return False
-            tmp = tmp // 10
-        return True
+    def isPalindrome(self, x: int) -> bool:
+        x = str(x)
+        if (x == x[::-1]):
+            return True
+        return False        
+        
+        
+    # def isPalindrome(self, x):
+    #     if x < 0:
+    #         return False
+    #     ls = len(str(x))
+    #     tmp = x
+    #     for i in range(int(ls/2)):
+    #         right = int(tmp % 10)
+    #         left = tmp / (10 ** (ls - 2 * i - 1))
+    #         left = int(left % 10)
+    #         if left != right:
+    #             return False
+    #         tmp = tmp // 10
+    #     return True
+    
 
     # def isPalindrome(self, x):
     #     #leetcode book
