@@ -241,9 +241,10 @@ I'm currently working on [Analytics-Zoo](https://github.com/intel-analytics/anal
 |---| ----- |
 | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) |
 
-## Other Leetcode Repos
+## Other LeetCode Repos
 
+1. [LeetCode Algorithms ~anishLearnsToCode](https://github.com/anishLearnsToCode/leetcode-algorithms)
 1. [haoel's leetcode](https://github.com/haoel/leetcode)
-2. [soulmachine's leetcode](https://github.com/soulmachine/leetcode)
-3. [kamyu104's LeetCode](https://github.com/kamyu104/LeetCode)
-4. [gouthampradhan's leetcode](https://github.com/gouthampradhan/leetcode)
+1. [soulmachine's leetcode](https://github.com/soulmachine/leetcode)
+1. [kamyu104's LeetCode](https://github.com/kamyu104/LeetCode)
+1. [gouthampradhan's leetcode](https://github.com/gouthampradhan/leetcode)
