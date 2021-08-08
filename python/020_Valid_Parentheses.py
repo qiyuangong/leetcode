@@ -8,38 +8,24 @@ class Solution:
         :type s: str
         :rtype: bool
         """
-        if s is None:
-            return True
+        pairs={"(":")","[":"]","{":"}"}
         stack = []
-        for t in s:
-            if t == ')':
+        for i in range(len(s)):
+            if s[i] in pairs.keys():
+                stack.append(s[i])
+            else :
                 try:
-                    current = stack.pop()
-                    if current != '(':
+                    if pairs[stack[-1]] == s[i]:
+                        stack.pop()
+                    else:
                         return False
                 except:
                     return False
-            elif t == '}':
-                try:
-                    current = stack.pop()
-                    if current != '{':
-                        return False
-                except:
-                    return False
-            elif t == ']':
-                try:
-                    current = stack.pop()
-                    if current != '[':
-                        return False
-                except:
-                    return False
-            else:
-                stack.append(t)
-        if len(stack) == 0:
+        if stack == []:
             return True
-        else:
+        else :
             return False
-
+        
 
     # def isValid(self, s):
     #     # python replace
