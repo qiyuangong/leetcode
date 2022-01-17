@@ -1,8 +1,7 @@
 class Solution:
-    def CompareVersion(self, version1: str, version2: str) -> int:
+    def compareVersion(self, version1: str, version2: str) -> int:
         l1=list(map(int,version1.split('.')))
         l2=list(map(int,version2.split('.')))
-        #print(l1,l2)
         if l1==l2:
             return(0)
         
@@ -13,7 +12,7 @@ class Solution:
             for i in range(a-b):
                 l2.append("0")
         
-        if b>a:
+        else:
             for i in range(b-a):
                 l1.append("0")
             
