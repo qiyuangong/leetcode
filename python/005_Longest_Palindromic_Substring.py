@@ -85,4 +85,4 @@ class Solution(object):
 if __name__ == '__main__':
     # begin
     s = Solution()
-    print s.longestPalindrome("abcbe")
+    print(s.longestPalindrome("abcbe"))
