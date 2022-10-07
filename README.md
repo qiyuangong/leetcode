@@ -246,6 +246,7 @@ I'm currently working on [Analytics-Zoo](https://github.com/intel-analytics/anal
 | 1981 | [Minimize the Difference Between Target and Chosen Elements](https://leetcode.com/problems/minimize-the-difference-between-target-and-chosen-elements/) | [Java](https://github.com/qiyuangong/leetcode/blob/master/java/1981_Minimize_the_Difference_Between_Target_and_Chosen_Elements.java) | DP memo[row][sum] to avoid recomputing |
 | 2409 | [Count Days Spent Together](https://leetcode.com/problems/count-days-spent-together/) | [Python](https://github.com/qiyuangong/leetcode/blob/master/python/2409_Count_Days_Spent_Together.py)| Use month as a day |
 | 2413 | [Smallest Even Multiple](https://leetcode.com/problems/smallest-even-multiple/) | [Python](https://github.com/qiyuangong/leetcode/blob/master/python/2413_Smallest_Even_Multiple.py)| Check the n is multiply by 2 |
+| 2429 | [Minimize XOR](https://leetcode.com/problems/minimize-xor/) | [Python](https://github.com/qiyuangong/leetcode/blob/master/python/2429_Minimize_XOR.py.py) | check the num1, num2 with length and replace "0" compare with num1. |
 
 | # | To Understand |
 |---| ----- |
