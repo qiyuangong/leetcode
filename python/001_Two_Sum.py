@@ -58,3 +58,4 @@ class Solution(object):
                 begin += 1
             else:
                 end -= 1
+                
