@@ -14,11 +14,21 @@ class Solution:
 #       if -value <= x < value:
 #           return x
 #       return 0
+        
+        is_neg = False
+        if x < 0:
+            x = -x
+            is_neg = True
 
         res = 0
-        for i in range(32):  
-            res = res << 1
-            bit = x % 2
-            res += bit
-            x = x >> 1
+        while x > 0:
+            res *= 10
+            res += x % 10
+            x //= 10
+        if is_neg:
+            res = -res
+
+        if res < -2**31 or res > 2**31-1:
+            return 0
         return res
+    
